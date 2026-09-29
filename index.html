@@ -51,6 +51,9 @@ nav a:hover{color:var(--fg)}nav a:hover::after{width:100%}
 #about {
   padding-top: 0px !important;
 }
+#work {
+  padding-top: 10px !important;
+}
 section{padding:90px 5vw;max-width:1100px;margin:0 auto;position:relative;overflow:visible}
 h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:70px}
 .sub{color:var(--acc);margin:6px 0 46px;font-size:1.05rem}
@@ -144,7 +147,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
 <header>
   <a class="logo" href="#top" aria-label="SAPagentic home">
     <span class="mark"><i style="font-style:normal">LOGO</i><img src="logos/sapagentic.png" alt="" onload="this.parentNode.style.border='0'" onerror="this.remove()"></span>
-    <span>SAPagentic</span>
+    <span>Mamatha Pastam</span>
   </a>
   <nav id="nav">
     <a href="#about">About</a>
@@ -247,7 +250,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
     <h2 class="t">SERVICES</h2>
     <p class="sub">WHAT I CAN BUILD FOR YOU</p>
     <div class="grid">
-      <article class="card"><div class="art a1">&lt;SAP AI /&gt;</div><div class="body"><small>ARTIFICIAL INTELLIGENCE</small><h3>SAP AI and agentic workflows</h3><p>Autonomous agents, LLM-assisted tooling and MCP servers that connect AI to SAP development artifacts and data.</p></div></article>
+      <article class="card"><div class="art a1">SAP AI</div><div class="body"><small>ARTIFICIAL INTELLIGENCE</small><h3>SAP AI and agentic workflows</h3><p>Autonomous agents, LLM-assisted tooling and MCP servers that connect AI to SAP development artifacts and data.</p></div></article>
       <article class="card"><div class="art a2">ABAP RAP</div><div class="body"><small>S/4HANA DEVELOPMENT</small><h3>RAP apps and Fiori Elements</h3><p>Behavior definitions, actions, determinations, service exposure and CDS modelling for custom apps.</p></div></article>
       <article class="card"><div class="art a3">CLEAN CORE</div><div class="body"><small>ARCHITECTURE</small><h3>Clean core extensions</h3><p>Side-by-side and on-stack extensibility on SAP BTP that keeps your core upgrade-safe.</p></div></article>
       <article class="card"><div class="art a4">OData / BAPI / IDoc</div><div class="body"><small>INTEGRATION</small><h3>APIs and interfaces</h3><p>OData V2/V4, RFC, BAPI and IDoc integrations, plus performance tuning for high-volume landscapes.</p></div></article>
@@ -322,7 +325,7 @@ const KW = 'CLASS|ENDCLASS|IMPLEMENTATION|METHOD|ENDMETHOD|VALUE';
 const re = new RegExp('(`[^`\\n]*`?)|(^\\*[^\\n]*)|\\b(' + KW + ')\\b', 'gm');
 const shell = esc(TPL).replace(re, (m, str, com, kw) =>
   str ? `<span class="s">${str}</span>` : com ? `<span class="c">${com}</span>` : `<span class="k">${kw}</span>`);
-const F = { name: { t: 'Mamatha Pastam', n: 0 }, company: { t: 'SAPagentic', n: 0 }, focus: { t: focuses[0], n: 0 } };
+const F = { name: { t: 'Mamatha Pastam', n: 0 }, company: { t: 'SAP agentic', n: 0 }, focus: { t: focuses[0], n: 0 } };
 const GLYPHS = '#@$%*+=?/|0123456789ABCDEFXZ';
 const rnd = () => GLYPHS[Math.random() * GLYPHS.length | 0];
 const fieldHTML = f => {
