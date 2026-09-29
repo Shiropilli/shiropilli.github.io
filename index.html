@@ -90,7 +90,14 @@ h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em;mar
 .about-top{display:flex;gap:36px;align-items:center;margin-bottom:28px;flex-wrap:wrap}
 .photo{position:relative;width:210px;height:210px;flex:none;border-radius:50%;border:2px solid var(--acc);overflow:hidden;display:grid;place-items:center;background:var(--bg2);font-size:3.4rem;font-weight:700;color:var(--acc);box-shadow:0 0 44px rgba(94,234,212,.18)}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.about-top p{flex:1 1 320px;color:var(--mut);font-size:1.1rem}
+.about-text{flex:1 1 320px}
+.about-top p{color:var(--mut);font-size:1.1rem}
+.mini{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn.sm{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;font-size:.92rem}
+.btn.sm svg{width:16px;height:16px;fill:currentColor}
+.mailline{font-size:1.15rem;color:var(--mut);margin-bottom:6px}
+.mailline a{color:var(--acc);font-family:'JetBrains Mono',monospace;word-break:break-all}
+.mailline a:hover{text-decoration:underline}
 .head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
 .co{display:inline-flex;align-items:center;height:48px}
 .co img,.co b{box-sizing:border-box;width:150px;height:48px;border-radius:8px}
@@ -127,16 +134,17 @@ footer .logo{justify-content:center;margin-bottom:6px}
 footer p{color:var(--mut)}
 footer .links{display:flex;justify-content:center;gap:24px;margin-top:14px}
 footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline}
-.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--acc);border-radius:8px;width:42px;height:42px;font-size:1.3rem;cursor:pointer}
-.menu-btn::before{content:'\2630'}
-.menu-btn[aria-expanded=true]::before{content:'\2715'}
+nav{scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a.active{color:var(--fg)}
+nav a.active::after{width:100%}
 @media(max-width:760px){
-  .menu-btn{display:block}
-  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:6px 5vw 14px;background:rgba(11,16,32,.97);border-bottom:1px solid var(--line)}
-  nav.open{display:flex}
-  nav a{padding:14px 0;border-bottom:1px solid var(--line);font-size:1.05rem}
-  nav a:last-child{border-bottom:0}
+  html{scroll-padding-top:120px}
+  header{flex-direction:column;align-items:stretch;gap:8px;padding:10px 5vw 8px}
+  nav{position:relative;gap:8px;overflow-x:auto;padding:2px 0 4px;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent)}
+  nav a{flex:none;white-space:nowrap;padding:7px 15px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;background:rgba(18,26,51,.7)}
   nav a::after{display:none}
+  nav a.active{background:var(--acc);border-color:var(--acc);color:var(--bg)}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.item,.card{opacity:1;transform:none}}
 </style>
@@ -156,7 +164,6 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
     <a href="#work">Services</a>
     <a href="#contact">Contact</a>
   </nav>
-  <button class="menu-btn" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"></button>
 </header>
 
 <main id="top">
@@ -180,7 +187,13 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
     <div class="about-top">
       <!-- Add your photo as photo.jpg in the same folder as index.html -->
       <div class="photo"><span>MP</span><img src="photo.jpg" alt="Photo of Mamatha Pastam" onerror="this.remove()"></div>
-      <p>I'm an SAP technical consultant based in Gothenburg with eight years across ABAP, S/4HANA and SAP BTP. I build clean core extensions with ABAP RAP and Fiori Elements, and I now focus on SAP AI: agentic workflows and MCP servers that put AI to work on real SAP landscapes.</p>
+      <div class="about-text">
+        <p>I'm an SAP technical consultant based in Gothenburg with eight years across ABAP, S/4HANA and SAP BTP. I build clean core extensions with ABAP RAP and Fiori Elements, and I now focus on SAP AI: agentic workflows and MCP servers that put AI to work on real SAP landscapes.</p>
+        <div class="mini">
+          <a class="btn sm" href="mailto:mamathapastam@sapagentic.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.5l8 5.5 8-5.5V7H4zm16 3l-8 5.5L4 10v7h16v-7z"/></svg> Email</a>
+          <a class="btn sm" href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> LinkedIn</a>
+        </div>
+      </div>
     </div>
     <p class="quote">"Clean core by design. Agentic by default."</p>
 	
@@ -260,23 +273,11 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
   <section id="contact" class="contact">
     <h2 class="t">LET'S WORK TOGETHER</h2>
     <p class="sub">SAP ROLES, PROJECTS AND ADVISORY</p>
-    <form id="cf" action="https://formsubmit.co/mamathapastam@sapagentic.com" method="POST">
-      <input type="hidden" name="_subject" value="New message from the SAPagentic portfolio">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label>Name<input type="text" name="name" required autocomplete="name"></label>
-      <label>Email<input type="email" name="email" required autocomplete="email"></label>
-      <label>Company (optional)<input type="text" name="company" autocomplete="organization"></label>
-      <label>Message<textarea name="message" required></textarea></label>
-      <button class="btn pri" type="submit">Send message</button>
-      <p id="status" role="status" aria-live="polite"></p>
-    </form>
-    <p class="direct">Prefer to write directly? Email <a href="mailto:mamathapastam@sapagentic.com">mamathapastam@sapagentic.com</a></p>
-    <a class="btn pri big" href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-      Connect on LinkedIn
-    </a>
+    <p class="mailline">Email me at <a href="mailto:mamathapastam@sapagentic.com">mamathapastam@sapagentic.com</a></p>
+    <div class="btns">
+      <a class="btn pri big" href="mailto:mamathapastam@sapagentic.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2V5zm2 2v.5l8 5.5 8-5.5V7H4zm16 3l-8 5.5L4 10v7h16v-7z"/></svg> Send an email</a>
+      <a class="btn pri big" href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> LinkedIn</a>
+    </div>
   </section>
 </main>
 
@@ -303,7 +304,7 @@ const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你�
   for (let i = 0; ; i = (i + 1) % greetings.length) {
     const g = [...greetings[i]];
     for (let n = 1; n <= g.length; n++) { hello.textContent = g.slice(0, n).join(''); await sleep(110); }
-    await sleep(i === 0 ? 1600 : 1000);
+    await sleep(i === 0 ? 3000 : 2400);
     for (let n = g.length; n >= 0; n--) { hello.textContent = g.slice(0, n).join(''); await sleep(60); }
     await sleep(200);
   }
@@ -336,32 +337,32 @@ const fieldHTML = f => {
   }
   return out;
 };
-const render = () => pre.innerHTML = shell.replace(/\{\{(\w+)\}\}/g, (m, k) => fieldHTML(F[k]));
+const focusHTML = () => esc(F.focus.t.slice(0, F.focus.n)) + '<span class="caret"></span>';
+let typing = false;
+const render = () => pre.innerHTML = shell.replace(/\{\{(\w+)\}\}/g, (m, k) => (k === 'focus' && typing) ? focusHTML() : fieldHTML(F[k]));
 render();
 if (!reduce) {
-  let tick = 0, hold = 0, fi = 0;
+  let tick = 0, hold = 0, fi = 0, phase = 'decode';
   setInterval(() => {
     tick++;
-    if (tick < 16) { render(); return; }               /* show scrambled text first */
-    const cur = ['name', 'company', 'focus'].map(k => F[k]).find(f => f.n < f.t.length);
-    if (cur) { if (tick % 2 === 0) cur.n++; hold = 0; render(); return; }
-    if (++hold > 75) {                                 /* re-encrypt and decode the next focus */
-      fi = (fi + 1) % focuses.length; F.focus.t = focuses[fi]; F.focus.n = 0; hold = 0; render();
+    if (tick < 16) { render(); return; }                       /* show scrambled text first */
+    if (phase === 'decode') {                                   /* all three decode together, once */
+      let left = 0;
+      for (const k in F) { const f = F[k]; if (f.n < f.t.length) { if (tick % 2 === 0) f.n++; left++; } }
+      render();
+      if (!left) phase = 'hold';
+    } else if (phase === 'hold') {
+      if (++hold > 25) { hold = 0; typing = true; phase = 'delete'; render(); }
+    } else if (phase === 'delete') {                            /* focus cycles by deleting then typing */
+      if (F.focus.n > 0) F.focus.n--;
+      else { fi = (fi + 1) % focuses.length; F.focus.t = focuses[fi]; phase = 'type'; }
+      render();
+    } else if (phase === 'type') {
+      if (F.focus.n < F.focus.t.length) F.focus.n++; else phase = 'hold';
+      render();
     }
   }, 45);
 } else { for (const k in F) F[k].n = F[k].t.length; render(); }
-
-/* Contact form (FormSubmit, AJAX with normal POST as fallback) */
-const cf = document.getElementById('cf'), st = document.getElementById('status');
-cf.addEventListener('submit', async e => {
-  e.preventDefault();
-  st.textContent = 'Sending...';
-  try {
-    const r = await fetch(cf.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(cf) });
-    if (!r.ok) throw 0;
-    cf.reset(); st.textContent = 'Thanks, your message was sent. I will reply soon.';
-  } catch (_) { st.textContent = 'Could not send. Please email mamathapastam@sapagentic.com directly.'; }
-});
 
 /* Marquees */
 const marquees = [];
@@ -394,10 +395,19 @@ const loop = now => {
 };
 requestAnimationFrame(loop);
 
-/* Mobile menu */
-const nav = document.getElementById('nav'), mb = document.getElementById('menu');
-mb.addEventListener('click', () => mb.setAttribute('aria-expanded', nav.classList.toggle('open')));
-nav.addEventListener('click', e => { if (e.target.tagName === 'A') { nav.classList.remove('open'); mb.setAttribute('aria-expanded', 'false'); } });
+/* Section nav: highlight the current section and keep its chip in view */
+const nav = document.getElementById('nav');
+const navLinks = [...nav.querySelectorAll('a')];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  navLinks.forEach(a => {
+    const on = a.getAttribute('href') === '#' + e.target.id;
+    a.classList.toggle('active', on);
+    if (on && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - 24, behavior: 'smooth' });
+  });
+}), { rootMargin: '-40% 0px -55% 0px' });
+document.querySelectorAll('main section').forEach(sec => spy.observe(sec));
+addEventListener('scroll', () => { if (scrollY < innerHeight * .5) navLinks.forEach(a => a.classList.remove('active')); }, { passive: true });
 
 /* Scroll reveal */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
