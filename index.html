@@ -40,8 +40,9 @@ nav a:hover{color:var(--fg)}nav a:hover::after{width:100%}
 .code{width:min(560px,100%);text-align:left;background:rgba(18,26,51,.85);border:1px solid var(--line);border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .code .bar{display:flex;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line)}
 .code .bar i{width:11px;height:11px;border-radius:50%;background:#f87171}.code .bar i:nth-child(2){background:#fbbf24}.code .bar i:nth-child(3){background:#34d399}
-.code pre{padding:18px 20px;font-size:clamp(.68rem,2.5vw,.88rem);min-height:17.5em;white-space:pre-wrap;word-break:break-word;line-height:1.55}
+.code pre{padding:18px 20px;font-size:clamp(.68rem,2.5vw,.88rem);min-height:12.6em;white-space:pre-wrap;word-break:break-word;line-height:1.55}
 .c{color:#5f6b93;font-style:italic}
+.x{color:#6b7599}.f{color:#fbbf24;text-shadow:0 0 8px rgba(251,191,36,.75)}
 .k{color:var(--acc2)}.s{color:var(--acc)}
 .scroll{display:block;font-size:2rem;line-height:1;color:var(--acc);animation:bob 1.6s ease-in-out infinite;cursor:pointer;padding:8px 18px;border-radius:50%}
 .scroll:hover{background:rgba(94,234,212,.12)}
@@ -82,7 +83,7 @@ h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em}
 .card p{color:var(--mut);font-size:.96rem}
 .a1{background:linear-gradient(135deg,#0f766e,#1e3a8a)}.a2{background:linear-gradient(135deg,#6d28d9,#0e7490)}.a3{background:linear-gradient(135deg,#be185d,#4c1d95)}.a4{background:linear-gradient(135deg,#0369a1,#115e59)}
 /* about extras + contact */
-.about-top{display:flex;gap:36px;align-items:center;margin-bottom:64px;flex-wrap:wrap}
+.about-top{display:flex;gap:36px;align-items:center;margin-bottom:28px;flex-wrap:wrap}
 .photo{position:relative;width:210px;height:210px;flex:none;border-radius:50%;border:2px solid var(--acc);overflow:hidden;display:grid;place-items:center;background:var(--bg2);font-size:3.4rem;font-weight:700;color:var(--acc);box-shadow:0 0 44px rgba(94,234,212,.18)}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .about-top p{flex:1 1 320px;color:var(--mut);font-size:1.1rem}
@@ -103,6 +104,10 @@ button.btn{font:inherit;font-weight:500;cursor:pointer;justify-self:start}
 .direct{margin-top:34px;color:var(--mut)}
 .direct a{color:var(--acc)}.direct a:hover{text-decoration:underline}
 .hp{position:absolute;left:-9999px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.88rem;background:rgba(18,26,51,.7)}
+.btn.big{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:20px 56px;font-size:1.35rem;margin-top:30px;box-shadow:0 12px 40px rgba(94,234,212,.22)}
+.btn.big svg{width:28px;height:28px;fill:currentColor}
 
 .contact{text-align:center}
 .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:10px}
@@ -129,6 +134,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
   </a>
   <nav>
     <a href="#about">About</a>
+    <a href="#timeline">Timeline</a>
     <a href="#work">Services</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -155,6 +161,20 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       <div class="photo"><span>MP</span><img src="photo.jpg" alt="Photo of Mamatha Pastam" onerror="this.remove()"></div>
       <p>I'm an SAP technical consultant based in Gothenburg with eight years across ABAP, S/4HANA and SAP BTP. I build clean core extensions with ABAP RAP and Fiori Elements, and I now focus on SAP AI: agentic workflows and MCP servers that put AI to work on real SAP landscapes.</p>
     </div>
+    <h4 style="margin:26px 0 12px">SAP certifications</h4>
+    <div class="chips">
+      <span>Development Specialist: ABAP for SAP HANA 2.0</span>
+      <span>Development Associate: SAP Fiori Application Developer</span>
+      <span>Associate: Generative AI Developer</span>
+      <span>Associate: Back-End Developer, ABAP Cloud</span>
+    </div>
+    <p class="quote">"Clean core by design. Agentic by default."</p>
+  </section>
+
+  <div class="marq" aria-hidden="true"><div class="track" id="t3"></div></div>
+  <section id="timeline">
+    <h2 class="t">TIMELINE</h2>
+    <p class="sub">EIGHT YEARS IN SAP</p>
     <div class="tl">
       <div class="item">
         <div class="head"><h3>2026 - Present</h3>
@@ -168,7 +188,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       </div>
       <div class="item">
         <div class="head"><h3>2024 - 2026</h3>
-          <span class="co"><img src="logos/sap.png" alt="SAP logo" onload="this.parentNode.classList.add('ok')"><b>SAP Labs</b></span></div>
+          <span class="co"><img referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/SAP_2011_logo.svg" alt="SAP logo" onload="this.parentNode.classList.add('ok')"><b>SAP Labs</b></span></div>
         <h4>SAP S/4HANA Developer at SAP Labs, Bengaluru</h4>
         <ul>
           <li>🧩 Built cloud-ready apps with ABAP RAP for custom Fiori Elements frontends</li>
@@ -179,7 +199,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       </div>
       <div class="item">
         <div class="head"><h3>2022 - 2024</h3>
-          <span class="co"><img src="logos/deloitte.png" alt="Deloitte logo" onload="this.parentNode.classList.add('ok')"><b>Deloitte</b></span></div>
+          <span class="co"><img referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_of_Deloitte.svg" alt="Deloitte logo" onload="this.parentNode.classList.add('ok')"><b>Deloitte</b></span></div>
         <h4>SAP Technical Consultant at Deloitte USI, Hyderabad</h4>
         <ul>
           <li>📦 End-to-end WRICEF delivery on global S/4HANA programs across SD, MM and EWM</li>
@@ -189,7 +209,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       </div>
       <div class="item">
         <div class="head"><h3>2018 - 2022</h3>
-          <span class="co"><img src="logos/accenture.png" alt="Accenture logo" onload="this.parentNode.classList.add('ok')"><b>Accenture</b></span></div>
+          <span class="co"><img referrerpolicy="no-referrer" src="https://commons.wikimedia.org/wiki/Special:FilePath/Accenture_logo.svg" alt="Accenture logo" onload="this.parentNode.classList.add('ok')"><b>Accenture</b></span></div>
         <h4>Application Development Analyst at Accenture, Bengaluru</h4>
         <ul>
           <li>🛠️ ABAP OO, BAdIs, ALV reports, RFC, IDoc and ALE across Procurement, MM, SD and EWM</li>
@@ -197,10 +217,7 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
         </ul>
       </div>
     </div>
-    <p class="quote">"Clean core by design. Agentic by default."</p>
   </section>
-
-  <div class="marq" aria-hidden="true"><div class="track" id="t3"></div></div>
 
   <section id="work">
     <h2 class="t">SERVICES</h2>
@@ -228,14 +245,17 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       <button class="btn pri" type="submit">Send message</button>
       <p id="status" role="status" aria-live="polite"></p>
     </form>
-    <p class="direct">Prefer to write directly? Email <a href="mailto:mamathapastam@sapagentic.com">mamathapastam@sapagentic.com</a> or connect on <a href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener">LinkedIn</a>.</p>
-    <p class="note">Certified: ABAP for SAP HANA 2.0 · Fiori Application Developer · Generative AI Developer · ABAP Cloud</p>
+    <p class="direct">Prefer to write directly? Email <a href="mailto:mamathapastam@sapagentic.com">mamathapastam@sapagentic.com</a></p>
+    <a class="btn pri big" href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+      Connect on LinkedIn
+    </a>
   </section>
 </main>
 
 <footer>
   <a class="logo" href="#top"><svg viewBox="0 0 34 34" width="30" height="30" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#121a33" stroke="#5eead4" stroke-width="1.5"/><path d="M9 22l4-10 4 10M10.6 19h4.8M21 12v10m0-10h3a3 3 0 010 6h-3" fill="none" stroke="#5eead4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mamatha Pastam</span></a>
-  <p>Analytical mind. Agentic builder.</p>
+  <p>From ABAP to agents: SAP consulting for the agentic era.</p>
   <div class="links">
     <a href="https://www.linkedin.com/in/mamathapastam" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:mamathapastam@sapagentic.com">Email</a>
@@ -250,7 +270,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* Text changing + typing: rotating greeting */
 const hello = document.getElementById('hello');
-const greetings = ['Hello!', 'Hallo!', 'Hej!', 'Ciao!', 'Hoi!', '你好！', 'नमस्ते!', 'నమస్కారం!'];
+const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你好！', 'नमस्ते!'];
 (async () => {
   if (reduce) { hello.textContent = 'Hello!'; return; }
   for (let i = 0; ; i = (i + 1) % greetings.length) {
@@ -262,41 +282,48 @@ const greetings = ['Hello!', 'Hallo!', 'Hej!', 'Ciao!', 'Hoi!', '你好！', '�
   }
 })();
 
-/* Typing ABAP card with cycling focus text */
+/* ABAP card: starts "encrypted", then decodes into the real values */
 const pre = document.getElementById('json');
 const focuses = ['SAP AI & Agentic Consultant', 'ABAP RAP & Clean Core Developer', 'S/4HANA Technical Architect'];
-const build = f => `* SAPagentic profile
-CLASS zcl_mamatha DEFINITION PUBLIC FINAL.
-  PUBLIC SECTION.
-    INTERFACES if_oo_adt_classrun.
-ENDCLASS.
-
-CLASS zcl_mamatha IMPLEMENTATION.
-  METHOD if_oo_adt_classrun~main.
-    DATA(profile) = VALUE ty_profile(
-      name    = \`Mamatha Pastam\`
-      company = \`SAPagentic\`
-      focus   = \`${f}\` ).
-    out->write( profile ).
+const TPL = `* SAPagentic
+CLASS zcl_sapagentic IMPLEMENTATION.
+  METHOD who_builds_the_agents.
+    result = VALUE #(
+      name    = \`{{name}}\`
+      company = \`{{company}}\`
+      focus   = \`{{focus}}\` ).
   ENDMETHOD.
 ENDCLASS.`;
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const KW = 'CLASS|ENDCLASS|DEFINITION|IMPLEMENTATION|PUBLIC|FINAL|SECTION|INTERFACES|METHOD|ENDMETHOD|DATA|VALUE';
+const KW = 'CLASS|ENDCLASS|IMPLEMENTATION|METHOD|ENDMETHOD|VALUE';
 const re = new RegExp('(`[^`\\n]*`?)|(^\\*[^\\n]*)|\\b(' + KW + ')\\b', 'gm');
-const paint = t => pre.innerHTML = esc(t).replace(re, (m, str, com, kw) =>
-  str ? `<span class="s">${str}</span>` : com ? `<span class="c">${com}</span>` : `<span class="k">${kw}</span>`) + '<span class="caret"></span>';
-(async () => {
-  if (reduce) { paint(build(focuses[0])); return; }
-  const first = build(focuses[0]);
-  await sleep(600);
-  for (let n = 1; n <= first.length; n++) { paint(first.slice(0, n)); await sleep(24); }
-  for (let i = 0; ; i = (i + 1) % focuses.length) {
-    await sleep(2200);
-    const cur = focuses[i], nxt = focuses[(i + 1) % focuses.length];
-    for (let n = cur.length; n >= 0; n--) { paint(build(cur.slice(0, n))); await sleep(28); }
-    for (let n = 1; n <= nxt.length; n++) { paint(build(nxt.slice(0, n))); await sleep(55); }
+const shell = esc(TPL).replace(re, (m, str, com, kw) =>
+  str ? `<span class="s">${str}</span>` : com ? `<span class="c">${com}</span>` : `<span class="k">${kw}</span>`);
+const F = { name: { t: 'Mamatha Pastam', n: 0 }, company: { t: 'SAPagentic', n: 0 }, focus: { t: focuses[0], n: 0 } };
+const GLYPHS = '#@$%*+=?/|0123456789ABCDEFXZ';
+const rnd = () => GLYPHS[Math.random() * GLYPHS.length | 0];
+const fieldHTML = f => {
+  let out = '';
+  for (let i = 0; i < f.t.length; i++) {
+    const ch = f.t[i];
+    out += (i < f.n || ch === ' ') ? esc(ch) : `<span class="${i === f.n ? 'f' : 'x'}">${rnd()}</span>`;
   }
-})();
+  return out;
+};
+const render = () => pre.innerHTML = shell.replace(/\{\{(\w+)\}\}/g, (m, k) => fieldHTML(F[k]));
+render();
+if (!reduce) {
+  let tick = 0, hold = 0, fi = 0;
+  setInterval(() => {
+    tick++;
+    if (tick < 16) { render(); return; }               /* show scrambled text first */
+    const cur = ['name', 'company', 'focus'].map(k => F[k]).find(f => f.n < f.t.length);
+    if (cur) { if (tick % 2 === 0) cur.n++; hold = 0; render(); return; }
+    if (++hold > 75) {                                 /* re-encrypt and decode the next focus */
+      fi = (fi + 1) % focuses.length; F.focus.t = focuses[fi]; F.focus.n = 0; hold = 0; render();
+    }
+  }, 45);
+} else { for (const k in F) F[k].n = F[k].t.length; render(); }
 
 /* Contact form (FormSubmit, AJAX with normal POST as fallback) */
 const cf = document.getElementById('cf'), st = document.getElementById('status');
