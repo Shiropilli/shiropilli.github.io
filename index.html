@@ -48,8 +48,11 @@ nav a:hover{color:var(--fg)}nav a:hover::after{width:100%}
 .scroll:hover{background:rgba(94,234,212,.12)}
 @keyframes bob{50%{transform:translateY(12px)}}
 /* sections */
-section{padding:90px 5vw;max-width:1100px;margin:0 auto}
-h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em}
+#about {
+  padding-top: 0px !important;
+}
+section{padding:90px 5vw;max-width:1100px;margin:0 auto;position:relative;overflow:visible}
+h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em;margin-top:70px}
 .sub{color:var(--acc);margin:6px 0 46px;font-size:1.05rem}
 .tl{position:relative;padding-left:34px;border-left:2px solid var(--line);display:grid;gap:44px}
 .item{position:relative;opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
@@ -60,9 +63,9 @@ h2.t{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em}
 .item h3{font-size:1.5rem;color:var(--acc)}
 .item h4{font-size:1.15rem;margin:2px 0 8px}
 .item ul{list-style:none;color:var(--mut);display:grid;gap:6px;margin-top:8px}
-.quote{margin:70px auto 0;text-align:center;font-size:1.25rem;font-style:italic;color:var(--mut);max-width:640px}
+.quote{margin:70px auto 70px;text-align:center;font-size:1.25rem;font-style:italic;color:var(--mut);max-width:640px}
 /* marquee */
-.marq{position:relative;z-index:1;overflow:hidden;padding:18px 0;border-block:1px solid var(--line);background:rgba(18,26,51,.5)}
+.marq{position:relative;z-index:1;overflow:hidden;padding:18px 0;border-block:1px solid var(--line);background:rgba(18,26,51,.5);width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;box-sizing:border-box}
 .marq+.marq{border-top:0}
 .track{display:flex;width:max-content;will-change:transform}
 .set{display:flex;gap:44px;padding-right:44px;flex:none}
@@ -163,11 +166,13 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
     <a class="scroll" href="#about" aria-label="Scroll to About section">↓</a>
   </div>
 
-  <div class="marq" aria-hidden="true"><div class="track" id="t1"></div></div>
-  <div class="marq rev" aria-hidden="true"><div class="track" id="t2"></div></div>
+
 
   <section id="about">
-    <h2 class="t">ABOUT ME</h2>
+	<div class="marq" aria-hidden="true"><div class="track" id="t1"></div></div>
+	<div class="marq rev" aria-hidden="true"><div class="track" id="t2"></div></div>
+  
+	<h2 class="t">ABOUT ME</h2>
     <p class="sub">CLEAN CORE.BUILD.AUTOMATE.REPEAT</p>
     <div class="about-top">
       <!-- Add your photo as photo.jpg in the same folder as index.html -->
@@ -175,9 +180,11 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
       <p>I'm an SAP technical consultant based in Gothenburg with eight years across ABAP, S/4HANA and SAP BTP. I build clean core extensions with ABAP RAP and Fiori Elements, and I now focus on SAP AI: agentic workflows and MCP servers that put AI to work on real SAP landscapes.</p>
     </div>
     <p class="quote">"Clean core by design. Agentic by default."</p>
+	
+	<div class="marq" aria-hidden="true"><div class="track" id="t3"></div></div> 
   </section>
 
-  <div class="marq" aria-hidden="true"><div class="track" id="t3"></div></div>
+
   <section id="timeline">
     <h2 class="t">TIMELINE</h2>
     <p class="sub">EIGHT YEARS IN SAP</p>
