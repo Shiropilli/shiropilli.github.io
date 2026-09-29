@@ -229,9 +229,9 @@ footer .links a{color:var(--acc)}footer .links a:hover{text-decoration:underline
     <h2 class="t">CERTIFICATIONS</h2>
     <p class="sub">SAP CERTIFIED</p>
     <div class="grid certs">
+	  <article class="card cert"><div class="body"><h3>Generative AI Developer</h3><p>SAP Certified Associate</p></div></article>
       <article class="card cert"><div class="body"><h3>ABAP for SAP HANA 2.0</h3><p>SAP Certified Development Specialist</p></div></article>
       <article class="card cert"><div class="body"><h3>SAP Fiori Application Developer</h3><p>SAP Certified Development Associate</p></div></article>
-      <article class="card cert"><div class="body"><h3>Generative AI Developer</h3><p>SAP Certified Associate</p></div></article>
       <article class="card cert"><div class="body"><h3>Back-End Developer, ABAP Cloud</h3><p>SAP Certified Associate</p></div></article>
     </div>
   </section>
@@ -287,7 +287,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 /* Text changing + typing: rotating greeting */
 const hello = document.getElementById('hello');
-const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你好！', 'नमस्ते!'];
+const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你好!', 'नमस्ते!'];
 (async () => {
   if (reduce) { hello.textContent = 'Hello!'; return; }
   for (let i = 0; ; i = (i + 1) % greetings.length) {
@@ -301,10 +301,9 @@ const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你�
 
 /* ABAP card: starts "encrypted", then decodes into the real values */
 const pre = document.getElementById('json');
-const focuses = ['SAP AI & Agentic Consultant', 'ABAP RAP & Clean Core Developer', 'S/4HANA Technical Architect'];
-const TPL = `* SAPagentic
-CLASS zcl_sapagentic IMPLEMENTATION.
-  METHOD who_builds_the_agents.
+const focuses = ['S/4HANA Technical Architect', 'SAP AI & Agentic Consultant', 'ABAP RAP & Clean Core Developer'];
+const TPL = `CLASS zcl_sapagentic IMPLEMENTATION.
+  METHOD about_me.
     result = VALUE #(
       name    = \`{{name}}\`
       company = \`{{company}}\`
