@@ -332,7 +332,7 @@ const greetings = ['Hello!', 'Hej!', 'Ciao!', 'నమస్కారం!', '你�
 
 /* ABAP card: starts "encrypted", then decodes into the real values */
 const pre = document.getElementById('json');
-const focuses = ['S/4HANA Technical Architect', 'SAP AI & Agentic Consultant', 'ABAP RAP & Clean Core'];
+const focuses = ['S/4HANA Technical Architect', 'SAP AI & Agentic Consultant', 'ABAP RAP & Clean Core Developer'];
 const TPL = `CLASS zcl_sapagentic IMPLEMENTATION.
   METHOD about_me.
     result = VALUE #(
@@ -361,6 +361,20 @@ const focusHTML = () => esc(F.focus.t.slice(0, F.focus.n)) + '<span class="caret
 let typing = false;
 const render = () => pre.innerHTML = shell.replace(/\{\{(\w+)\}\}/g, (m, k) => (k === 'focus' && typing) ? focusHTML() : fieldHTML(F[k]));
 render();
+/* Lock the box height to the tallest state (longest title, wrapped) so it never resizes while cycling */
+const lockHeight = () => {
+  pre.style.minHeight = '';
+  const saved = { t: F.focus.t, n: F.focus.n }, wasTyping = typing;
+  let max = 0;
+  typing = true;                                   /* measure with the caret, the widest state */
+  for (const t of focuses) { F.focus.t = t; F.focus.n = t.length; render(); max = Math.max(max, pre.getBoundingClientRect().height); }
+  F.focus.t = saved.t; F.focus.n = saved.n; typing = wasTyping; render();
+  pre.style.minHeight = max + 'px';
+};
+lockHeight();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockHeight);
+let lw = innerWidth;
+addEventListener('resize', () => { if (innerWidth !== lw) { lw = innerWidth; lockHeight(); } });
 if (!reduce) {
   let tick = 0, hold = 0, fi = 0, phase = 'decode';
   setInterval(() => {
